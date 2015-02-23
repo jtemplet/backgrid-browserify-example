@@ -1,5 +1,5 @@
 {
-  "name": "backgrid-example",
+  "name": "backgrid-browserify-example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "start": "beefy app/js/index.js:bundle.js --live",
     "build": "browserify app/js/index.js -o bundle.js"
   },
-  "author": "",
+  "author": "jtemple77@gmail.com",
   "license": "ISC",
   "dependencies": {
     "backbone": "~1.1.0",
