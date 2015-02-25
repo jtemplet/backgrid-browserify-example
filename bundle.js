@@ -14,7 +14,7 @@ var BackgridSelectAll = require('./lib/backgrid-select-all');
 var Territory = Backbone.Model.extend({});
 var Territories = Backbone.Collection.extend({
     model: Territory,
-    url: "../../test/data/territories.json"
+    url: "../../territories.json"
 });
 var territories = new Territories();
 var columns = [{
@@ -63,7 +63,7 @@ territories.fetch({reset: true});
 *********************************************/
 var PageableTerritories = Backbone.PageableCollection.extend({
     model: Territory,
-    url: '../../test/data/pageable-territories.json',
+    url: '../../pageable-territories.json',
     state: {
         pageSize: 15
     },
@@ -106,6 +106,7 @@ $example2.before(filter.render().el);
 $(filter.el).css({float: "right", margin: "20px"});
 // Fetch some data
 pageableTerritories.fetch({reset: true});
+
 },{"./lib/backgrid-filter":2,"./lib/backgrid-paginator":3,"./lib/backgrid-select-all":4,"backbone":6,"backbone-pageable":5,"backgrid":7,"jquery":9,"lunr":10,"underscore":11}],2:[function(require,module,exports){
 var Backbone = require('backbone');
 var $ = require('jquery');
