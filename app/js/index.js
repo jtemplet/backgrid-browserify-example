@@ -13,7 +13,7 @@ var BackgridSelectAll = require('./lib/backgrid-select-all');
 var Territory = Backbone.Model.extend({});
 var Territories = Backbone.Collection.extend({
     model: Territory,
-    url: "../../test/data/territories.json"
+    url: "../../territories.json"
 });
 var territories = new Territories();
 var columns = [{
@@ -62,7 +62,7 @@ territories.fetch({reset: true});
 *********************************************/
 var PageableTerritories = Backbone.PageableCollection.extend({
     model: Territory,
-    url: '../../test/data/pageable-territories.json',
+    url: '../../pageable-territories.json',
     state: {
         pageSize: 15
     },
