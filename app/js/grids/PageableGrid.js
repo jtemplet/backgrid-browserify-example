@@ -1,7 +1,6 @@
 var Backgrid = require('backgrid');
 var pageableTerritories = require('../../../test/data/pageable-territories');
 
-//var pageableTerritories = new PageableTerritories();
 
 var columns = [{
     name: 'id', // The key of the model attribute
@@ -34,12 +33,15 @@ var columns = [{
     cell: 'uri' // Renders the value in an HTML anchor element
 }];
 
-module.exports = new Backgrid.Grid({
-    columns: [{
-        // enable the select-all extension
-        name: '',
-        cell: 'select-row',
-        headerCell: 'select-all'
-    }].concat(columns),
-    collection: pageableTerritories
-});
+module.exports = function(pageableCollection) {
+    return (new Backgrid.Grid({
+        columns: [{
+            // enable the select-all extension
+            name: '',
+            cell: 'select-row',
+            headerCell: 'select-all'
+        }].concat(columns),
+        collection: pageableCollection
+    }));
+}
+
